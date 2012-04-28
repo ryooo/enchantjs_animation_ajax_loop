@@ -1,0 +1,29 @@
+<%
+if rand(10) < 20
+  exec = 'level_up'
+  # animationのvarsは起動するアニメーションに対するパラメータ
+  anim = {
+    :level_up => {
+      :js => '/20120406/parts/level_up.js',
+      :vars => {:card_id => '12000801'}
+    }
+  }
+else
+  exec = 'card_get'
+  anim = {
+    :card_get => {
+      :js => '/20120406/parts/card_get.js',
+    }
+  }
+end
+json = 
+  {:status => 200,
+   :userinfo => {:st => rand(100) + 1,
+                 :dm => rand(100) + 1,
+                 :om => rand(100) + 1
+                },
+   :animation => anim,
+   :exec => exec,
+  }.to_json
+%>
+<%= raw (json) %>

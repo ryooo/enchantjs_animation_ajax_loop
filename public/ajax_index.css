@@ -1,0 +1,61 @@
+#st {
+position: absolute;
+top: 138px;
+left: 25px;
+font-size: 100%;
+}
+#om {
+position: absolute;
+top: 138px;
+left: 128px;
+font-size: 100%;
+}
+#dm {
+position: absolute;
+top: 138px;
+left: 230px;
+font-size: 100%;
+}
+#lv {
+position: absolute;
+top: 2px;
+left: 189px;
+font-size: 100%;
+}
+#cc {
+position: absolute;
+top: 99px;
+left: 250px;
+font-size: 100%;
+}
+.status_up{
+-webkit-animation-name:"status_up";
+-webkit-animation-duration:2s;
+-webkit-animation-iteration-count:1;
+-webkit-transform-origin: 50% 100%;
+-webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes status_up {
+0%{color: red; -webkit-transform:scale(1.5) rotateY(0deg);}
+25%{color: red; -webkit-transform:scale(1.5) rotateY(180deg);}
+50%{color: red; -webkit-transform:scale(1.5) rotateY(360deg);}
+100%{-webkit-transform:scale(1);}
+}
+
+.status_down{
+-webkit-animation-name:"status_down";
+-webkit-animation-duration:2s;
+-webkit-animation-iteration-count:1;
+-webkit-transform-origin: 50% 100%;
+-webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes status_down {
+0%{color: blue; -webkit-transform:scale(1.5) rotateY(0deg);}
+25%{color: blue; -webkit-transform:scale(1.5) rotateY(180deg);}
+50%{color: blue; -webkit-transform:scale(1.5) rotateY(360deg);}
+100%{-webkit-transform:scale(1);}
+}
+
+#status {
+display:none;
+}

@@ -1,0 +1,62 @@
+<%
+html = '<div id="status" class="group mb5">
+<div class="statusCard">
+<img alt="" class="block" height="166" src="http://localhost:3000/images/cards/smart/large/103.jpg?1333061954" width="130">
+</div>
+<div id="mainBtn" class="fR">
+<ul>
+<li><a href="http://localhost:3000/areas/show/1"><span>クエスト</span></a></li>
+<li><a href="http://localhost:3000/battles"><span>対戦</span></a></li>
+<li><a href="http://localhost:3000/gacha"><span>ガチャ</span></a></li>
+</ul>
+</div>
+</div>
+
+<div id ="page" style="position:absolute;top:200px;">
+<div id="bar_controller"> 
+<h1>マイページ</h1>
+<nav id="headNav" class="group"> 
+<ul>
+<li><a href="#" id="btn_1">クエストを進める</a></li>
+<li>
+<a href="#" id="btn_2">イベント</a>
+</li> 
+<li><a href="#" id="btn_3">冒険者メニュー</a></li> 
+</ul> 
+</nav> 
+</div>
+<div id="my_status">
+<div class="statusTitle" style="margin-top:6px;"><a href="/users/show/54636?debug=1">ryooo1</a> <span style="color:#fff;">Lv.<span id="lv">1</span></span></div>
+<div cellpadding="0" cellspacing="0" border="0" class="statusData">
+<table cellpadding="0" cellspacing="0" border="0">
+<tbody><tr>
+<td><p class="aC"><span class="blueD">属性:</span><span class="colorH">人間</span></p></td>
+<td><p class="aC"><span class="blueD"><a id="card_manage" href="#">カード</a>:</span><span id="cc">1</span>&nbsp;&nbsp;&nbsp;/50</p></td>
+</tr>
+<tr>
+<td class="cellBoxParent" colspan="2">
+<div class="cellBox fL"><p class="aC"><span class="blueD">体力:</span><br><span id="st">10</span>/100<span id="st_diff"></span></p><div class="gauge" style="margin-left:auto;margin-right:auto;"><span class="gaugeYellow" style="width:100%;">&nbsp;</span></div><span class="limit"></span></div>
+<div class="cellBox fL"><p class="aC"><span class="blueD">攻魔:</span><br><span id="om">10</span>/100<span id="om_diff"></span></p><div class="gauge" style="margin-left:auto;margin-right:auto;"><span class="gaugeGreen" style="width:100%;">&nbsp;</span></div><span class="limit"></span></div>
+<div class="cellBox fL"><p class="aC"><span class="blueD">防魔:</span><br><span id="dm">10</span>/100<span id="dm_diff"></span></p><div class="gauge" style="margin-left:auto;margin-right:auto;"><span class="gaugeGreen" style="width:100%;">&nbsp;</span></div><span class="limit"></span></div>
+</td>
+</tr>
+<tr>
+<td><p class="aC"><span class="blueD"><a id="friend_manage" href="/friends?debug=1">仲間</a>:</span>0/10</p></td>
+<td><p class="aC"><span class="blueD">絆pt:</span>0</p></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>'
+%>
+<%= raw (
+{:status => 200,
+ :userinfo => {:st => rand(100) + 1,
+               :dm => rand(100) + 1,
+               :om => rand(100) + 1
+              },
+ :vars => {:html => html
+          }
+}.to_json)
+# 第一階層のvarsは呼び手に対してアタッチするパラメータ
+ %>
